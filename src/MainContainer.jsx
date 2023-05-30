@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Text from "./components/Text";
 import PoweredByCarousel from "./components/PoweredByCarousel";
-import Toggler from "./ReadyToUse/Toggler";
+import Toggler from "./ReadyToUse/Toggler/Toggler";
 
 const MainContainer = () => {
     return (<>
@@ -17,7 +17,7 @@ const MainContainer = () => {
             <Header text="Read To Use" marginTop={"1rem"} marginBottom={"1rem"}/>
             <Header text="Toggler" width={"50%"} fontSize={"1.75rem"} textAlign={"left"} fontWeight={"normal"}/>
             <Text bg={false} color={"#007aff"}>When building a web application, toggling an element is one of the key features you are likely to come across and may need to implement in your project.</Text>
-            <Toggler/>
+            <Toggler onToggle={(toggler) => {console.log("current state of toggler: ",toggler)}}/>
         </div>
     </>);
 };
