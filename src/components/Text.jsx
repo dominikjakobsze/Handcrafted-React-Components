@@ -1,6 +1,6 @@
 import React from "react";
 
-const Text = ({textAlign, marginTop, marginBottom, width, padding, children}) => {
+const Text = ({textAlign, marginTop, marginBottom, width, padding, children, bg = true, color}) => {
 
     //styles
     const additionalStyles = {
@@ -9,13 +9,14 @@ const Text = ({textAlign, marginTop, marginBottom, width, padding, children}) =>
         marginBottom: marginBottom || "0px",
         width: width || "100%",
         padding: padding || "0px",
+        color: color || "#ffffff",
     };
 
 
     return (<>
         <div
             style={additionalStyles}
-            className="text-[#ffffff] text-sm self-stretch bg-[#1c1c1d] rounded-xl"
+            className={`text-sm self-stretch rounded-xl ${bg ? "bg-[#1c1c1d]" : ""}`}
         >
         {children}
         </div>
