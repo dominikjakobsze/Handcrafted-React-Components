@@ -1,24 +1,25 @@
 import React from "react";
 
-const Header = ({text, textAlign, marginTop, marginBottom, color}) => {
+const Text = ({textAlign, marginTop, marginBottom, width, padding, children}) => {
 
     //styles
     const additionalStyles = {
         textAlign: textAlign || "center",
         marginTop: marginTop || "0px",
         marginBottom: marginBottom || "0px",
-        color: color || "#ffffff",
+        width: width || "100%",
+        padding: padding || "0px",
     };
 
-    //return
+
     return (<>
-        <div 
-            className="text-[#ffffff] text-5xl font-semibold w-full"
+        <div
             style={additionalStyles}
+            className="text-[#ffffff] text-sm self-stretch bg-[#1c1c1d] rounded-xl"
         >
-            {text}
+        {children}
         </div>
     </>);
 };
 
-export default Header;
+export default Text;
